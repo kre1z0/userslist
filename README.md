@@ -8,4 +8,4 @@ $ npm install
 $ npm start
 ```
 ## demo
-<a href=" https://kre1z0.github.io/godota">kre1z0.github.io/userslist</a>
+[users list demo](https://kre1z0.github.io/userslist)

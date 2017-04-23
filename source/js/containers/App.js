@@ -9,16 +9,19 @@ class App extends Component {
     this.state = {
       users: [
         {
+          id: 1,
           firstName: 'Mark',
           lastName: 'Otto',
           userName: 'mdo',
         },
         {
+          id: 2,
           firstName: 'Jacob',
           lastName: 'Thornton',
           userName: 'fat',
         },
         {
+          id: 3,
           firstName: 'John',
           lastName: 'Weber',
           userName: 'tavor',
@@ -33,8 +36,7 @@ class App extends Component {
 
   }
 
-  addUser(e, user) {
-    e.preventDefault()
+  addUser(user) {
     const copyUsers = this.state.users.slice()
     const concatUsers = copyUsers.concat(user)
     this.setState({
@@ -42,19 +44,19 @@ class App extends Component {
     })
   }
 
-  deleteUser(index) {
-    console.log('deleteUser', index)
+  deleteUser(id) {
     const copyUsers = this.state.users.slice()
-    // this.setState({
-    //   users: [],
-    // })
+    const deleteUser = copyUsers.filter(item => item.id !== id)
+    this.setState({
+      users: deleteUser,
+    })
   }
 
   render() {
     return (
       <div className='container' >
         <Col md={12} >
-          <h1>Todo list</h1>
+          <h1>Users list</h1>
           <Form {...this.state} addUser={this.addUser} />
           <Table striped bordered condensed hover >
             <thead>

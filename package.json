@@ -55,7 +55,8 @@
     "prop-types": "^15.5.8",
     "react": "^15.4.0",
     "react-bootstrap": "^0.30.10",
-    "react-dom": "^15.4.0"
+    "react-dom": "^15.4.0",
+    "shortid": "^2.2.8"
   },
   "description": "Starter boilerplate for React and Redux, using Webpack 2",
   "repository": {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import shortid from 'shortid'
 import { Button, Glyphicon } from 'react-bootstrap'
 
 class Users extends Component {
@@ -17,9 +18,9 @@ class Users extends Component {
     return (
       <tbody>
         {users.map((user, index) => {
-          const { firstName, lastName, userName } = user
+          const { id, firstName, lastName, userName } = user
           return (
-            <tr key={index}>
+            <tr key={shortid.generate()}>
               <td>{index + 1}</td>
               <td>{firstName}</td>
               <td>{lastName}</td>
@@ -28,7 +29,7 @@ class Users extends Component {
                 style={{ width: '50px' }}
               >
                 <Button bsStyle='danger'
-                  onClick={() => this.props.deleteUser(index)}
+                  onClick={() => this.props.deleteUser(id)}
                 >
                   <Glyphicon glyph='remove' />
                 </Button>
